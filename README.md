@@ -19,7 +19,7 @@ to give, say, facebook.com a higher `INDEX` value.
 Obligatory: https://xkcd.com/936/
 
 The password “hlrehcv5kn4o545v” has (or had, until I posted this)
-a good deal more security than “Password1!” (the has 80 bits of
+a good deal more security than “Password1!” (the first has 80 bits of
 entropy; the largest attacks I have seen, requiring entire datacenters
 filled with computers, can crack 64 bits; the second has at best 28 bits
 of security), but many sites consider the first password insecure and
