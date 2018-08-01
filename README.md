@@ -12,7 +12,7 @@ Replace “Some secret string” with a suitably hard to guess string, and
 facebook.com with the site you need to log in to.
 
 To create another password for the site, edit the file `pwgen.sh`
-to give, say. facebook.com a higher `INDEX` value.
+to give, say, facebook.com a higher `INDEX` value.
 
 ## Dealing with website rules
 
