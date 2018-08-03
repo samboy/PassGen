@@ -7,4 +7,4 @@ randomLetters:
 	cc -O2 -Wall -Wpedantic -o randomLetters randomLetters.c
 
 tinyrg32:
-	cc -O2 -Wall -Wpedantic -o tinyrg32 tinyrg32.c
+	cc -std=c99 -O2 -Wall -Wpedantic -o tinyrg32 tinyrg32.c
