@@ -53,18 +53,20 @@ INDEX=1
 LEN=3 # 16 character password
 
 ##### SITE SPECIFIC RULES GO HERE #####
-if [ "$SITE" = "timewarnercable.com" ] ; then
+case "$SITE" in
+timewarnercable.com)
 	ZAP='_' # Remove the _ at the end of the password
-fi
-if [ "$SITE" = "southwest.com" ] ; then
+	;;
+southwest.com)
 	CHANGE=':' # Make the _ a : in the password
-fi
-if [ "$SITE" = "paypal.com" ] ; then
+	;;
+paypal.com)
 	INDEX=2 # Increase index by 1 every time we change a password
-fi
-if [ "$SITE" = "idiot.example.com" ] ; then
+	;;
+idiot.example.com)
 	LEN=2 # This makes the password shorter
-fi
+	;;
+esac
 ### END SITE SPECIFIC RULES ###
 
 # Make sure tinyrg32 is in the path; if not then compile and run it
