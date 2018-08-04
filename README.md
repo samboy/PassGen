@@ -91,3 +91,21 @@ of date explanation of how the code works is
 The above program also has a 
 [user guide](https://github.com/samboy/rg32hash/blob/master/C/tinyrg32.md).
 
+## Some other C programs
+
+This package includes a couple of other C programs:
+
+* `randomLetters.c`  This small C program generates 32 random letters
+  with 5 bits of entropy each, giving us a string with 160 bits of
+  entropy.  `/dev/urandom` support needed (MacOS, Windows + Cygwin, Linux,
+  any other UNIX clone with /dev/urandom)
+* `tinyrg32.c`  This is a standalone version of the program which pwgen.sh
+  uses to generate the undelying random numbers.  If the program `tinyrg32`
+  is in one’s `$PATH`, the pwgen.sh script will not need to compile its
+  built-in version of tinyrg32.c to generate secure passwords.
+
+To compile these two program, simply type in `make` (the classic UNIX
+make program will, of course, be needed—it’s surprising how many so-called
+UNIX systems do not include this out of the box these days, but the package
+is available for pretty much every modern UNIX variant out there).
+
