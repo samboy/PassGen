@@ -51,7 +51,7 @@ in a password, so pwgen.sh has a special “for Southwest, use : instead
 of _ for punctuation” rule in it.
 
 To handle site specific rules, the script pwgen.sh will need to be
-edited by hand for each stire with a stupid password rule which 
+edited by hand for each site with a stupid password rule which 
 its default behavior does not cover.  There is a section giving
 examples of how to deal with site-specific rules.
 
