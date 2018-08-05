@@ -59,8 +59,16 @@ examples of how to deal with site-specific rules.
 
 The master password needs to be kept secret.
 
-This tool should not be used on multi-user systems; untrusted users
-can peek at the master password while the password is being generated.
+This tool should not be used on multi-user systems without precations
+being made. By default, untrusted users can peek at the master password
+while the password is being generated.
+
+If using Linux, the /proc directory can be locked down to not allow
+users to view other user’s processes:
+
+```
+mount -o remount,rw,hidepid=2 /proc
+```
 
 ### Cryptography used
 
