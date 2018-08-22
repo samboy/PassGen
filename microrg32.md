@@ -106,6 +106,23 @@ export P="$LEN:Some secret:example.com"
 ./microrg32 3 $LEN | head -3 | tail -1
 ```
 
+## The characters used in generated passwords
+
+Note that password strings never have the characters “0” and “1” in
+them; they use a custom base32 alphabet designed to minimize code size:
+
+|0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|
+|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|2|3|4|5|6|7|8|9|a|b|c|d|e|f|g|h|
+
+|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|
+|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|
+
+Also, to minimize code size, to get five-bit numbers, we simply discard
+the upper three bits of each byte, since getting more bytes is so trivial
+with the RadioGatún algorithm.
+
 ## The program
 
 microrg32.c, which generates the passwords, is as follows:
