@@ -101,7 +101,7 @@ This package includes a couple of other C programs:
 * `microrg32.c`  This is a standalone version of the program which pwgen.sh
   uses to generate the undelying random numbers.  If the program `microrg32`
   is in one’s `$PATH`, the pwgen.sh script will not need to compile its
-  built-in version of micro`rg32.c to generate secure passwords.
+  built-in version of `microrg32.c` to generate secure passwords.
 
 To compile these two programs, simply type in `make` (the classic UNIX
 make program will, of course, be needed—it’s surprising how many so-called
