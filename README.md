@@ -57,18 +57,9 @@ examples of how to deal with site-specific rules.
 
 ## Security considerations
 
-The master password needs to be kept secret.
-
-This tool should not be used on multi-user systems without precautions
-being made. By default, untrusted users can peek at the master password
-while the password is being generated.
-
-If using Linux, the /proc directory can be locked down to only allow
-users to see their own processes, e.g.:
-
-```
-mount -o remount,rw,hidepid=2 /proc
-```
+The master password needs to be kept secret.  The master password 
+should have enough entropy (i.e. be long enough) to be difficult 
+to guess.
 
 ### Cryptography used
 
@@ -107,15 +98,21 @@ This package includes a couple of other C programs:
   with 5 bits of entropy each, giving us a string with 160 bits of
   entropy.  `/dev/urandom` support needed (MacOS, Windows + Cygwin, Linux,
   any other UNIX clone with /dev/urandom)
-* `tinyrg32.c`  This is a standalone version of the program which pwgen.sh
-  uses to generate the undelying random numbers.  If the program `tinyrg32`
+* `microrg32.c`  This is a standalone version of the program which pwgen.sh
+  uses to generate the undelying random numbers.  If the program `microrg32`
   is in one’s `$PATH`, the pwgen.sh script will not need to compile its
-  built-in version of tinyrg32.c to generate secure passwords.
+  built-in version of micro`rg32.c to generate secure passwords.
 
-To compile these two program, simply type in `make` (the classic UNIX
+To compile these two programs, simply type in `make` (the classic UNIX
 make program will, of course, be needed—it’s surprising how many so-called
 UNIX systems do not include this out of the box these days, but the package
 is available for pretty much every modern UNIX variant out there).
+
+## Compatibility with older versions of PassGen
+
+The realease 1.0 of PassGen, done on August 22, 2018, broke compatibility
+with older versions of PassGen.  If older generated passwords are needed,
+please edit pwgen.sh to make `COST` be `@` instead of `3`.
 
 ## External links
 

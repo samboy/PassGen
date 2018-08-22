@@ -63,9 +63,8 @@ First arg | Number of blank rounds
 6         | 4194319
 7         | 8388623
 
-The work parameter acts like the “cost” parameter in bcrypt, where 
-every increment doubles the amount of work we perform to make the
-passwords.
+This parameter acts like the “cost” parameter in bcrypt, where every
+increment doubles the amount of work we perform to make the passwords.
 
 ## Multiple passwords generated
 
