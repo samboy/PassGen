@@ -6,12 +6,12 @@ pwgen.sh allows the one to generate secure passwords for websites.
 To use, do something like this:
 
 ```
-echo 'Some secret string' > ~/.master_password # Only do this once
+echo 'Some secret string hlrehcv5kn4' > ~/.master_password # Only do this once
 pwgen.sh facebook.com
 ```
 
-Replace “Some secret string” with a suitably hard to guess string, and 
-facebook.com with the site you need to log in to.
+Replace `Some secret string hlrehcv5kn4` with a suitably hard to guess
+string, and facebook.com with the site you need to log in to.
 
 This script is for people familiar with shell scripting (or Bash, as
 it’s usually called these days); by being a shell script, the rules can
