@@ -22,7 +22,7 @@ cc -O3 -o microrg32 microrg32.c
 ```
 LEN=4
 export P="$LEN:Some secret:example.com"
-./microrg32 1 4 | head -1
+./microrg32 1 $LEN | head -1
 ```
 
 The first argument is how much effort we should expend to get this
@@ -34,7 +34,8 @@ an 40-bit password, 3 60 bits, and so on).
 ## Comparison with tinyrg32
 
 ```
-tinyrg32 --password - 4 "4:Some secret:example.com" | head -1
+LEN=4
+tinyrg32 --password - $LEN "$LEN:Some secret:example.com" | head -1
 ```
 
 Acts the same as:
@@ -42,7 +43,7 @@ Acts the same as:
 ```
 LEN=4
 export P="$LEN:Some secret:example.com"
-./microrg32 @ 4 | head -1
+./microrg32 @ $LEN | head -1
 ```
 
 ## Determining how much work to make a password
@@ -77,7 +78,7 @@ let’s make an initial password for example.com:
 LEN=4
 SECRET="Some long passphrase with random text, like qhohxks5mx9el9v6ujg3t."
 export P="$LEN:Some secret:example.com"
-./microrg32 3 4 | head -1
+./microrg32 3 $LEN | head -1
 ```
 
 (Be sure to have SECRET be different than the above example!)
@@ -92,7 +93,7 @@ a new one:
 LEN=4
 SECRET="Some long passphrase with random text, like qhohxks5mx9el9v6ujg3t."
 export P="$LEN:Some secret:example.com"
-./microrg32 3 4 | head -2 | tail -1
+./microrg32 3 $LEN | head -2 | tail -1
 ```
 
 Should example.com now require us to change our password every 90 days,
@@ -102,7 +103,7 @@ we can do this 90 days later to generate a new password:
 LEN=4
 SECRET="Some long passphrase with random text, like qhohxks5mx9el9v6ujg3t."
 export P="$LEN:Some secret:example.com"
-./microrg32 3 4 | head -3 | tail -1
+./microrg32 3 $LEN | head -3 | tail -1
 ```
 
 ## The program
