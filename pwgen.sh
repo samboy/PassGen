@@ -28,7 +28,7 @@ fi
 # b) upper case letter
 # c) number
 # d) punctuation, where _ is considered punctuation
-# The tinyrg32 program adds _Aa1 to the end of each password which covers
+# This script adds _Aa1 to the end of each password which covers
 # *most* sites.  However, this being the internet, some sites have dumb
 # password rules we have to make exceptions for.  This script covers
 # most of them
@@ -71,7 +71,7 @@ idiot.example.com)
 esac
 ### END SITE SPECIFIC RULES ###
 
-# Make sure tinyrg32 is in the path; if not then compile and run it
+# Make sure microrg32 is in the path; if not then compile and run it
 MICRORG32="microrg32"
 
 if ! command -v microrg32 > /dev/null 2>&1 ; then
