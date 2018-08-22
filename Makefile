@@ -1,10 +1,10 @@
-all: randomLetters tinyrg32
+all: randomLetters microrg32
 
 clean:
-	rm -f randomLetters tinyrg32 *exe
+	rm -f randomLetters microrg32 tinyrg32 *exe
 
 randomLetters: randomLetters.c
 	cc -O2 -Wall -Wpedantic -o randomLetters randomLetters.c
 
-tinyrg32: tinyrg32.c
-	cc -std=c99 -O2 -Wall -Wpedantic -o tinyrg32 tinyrg32.c
+microrg32: microrg32.c
+	cc -std=c99 -O2 -Wall -Wpedantic -o microrg32 microrg32.c
