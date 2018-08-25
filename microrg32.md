@@ -123,6 +123,35 @@ Also, to minimize code size, to get five-bit numbers, we simply discard
 the upper three bits of each byte, since getting more bytes is so trivial
 with the RadioGatún algorithm.
 
+Here is a Python program which reads hex numbers on the standard input
+(e.g. "1234abcd321a") and converts them in to the base32 format used
+for passwords:
+
+```python
+#!/usr/bin/env python
+
+# This script takes hex numbers on the standard input and outputs
+# their tinyrg32 base32 form on the standard output
+
+import sys
+
+k = "23456789abcdefghijklmnopqrstuvwx"
+
+for line in sys.stdin:
+        while len(line) > 0:
+                h = line[0:2]
+                line = line[2:]
+                if(len(h) > 0):
+                    try:
+                        a = int(h,16)
+                    except:
+                        a = -1
+                    if a >= 0:
+                        a &= 31
+                        sys.stdout.write(k[a:a+1])
+        print ""
+```
+
 ## The program
 
 microrg32.c, which generates the passwords, is as follows:
