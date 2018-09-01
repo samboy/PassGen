@@ -51,8 +51,18 @@ INDEX=1
 # to be shorter. The password length is 4 + (4 * LEN), so for a site which
 # can only handle passwords 12 characters long, make LEN 2; for a site which
 # can only handle 8 character passwords, make LEN 1.  For someone who needs
-# 24 chars in the password, make LEN 5
+# 24 chars in the password, make LEN 5.
+
+# For sites (hello, Shutterfly!) which can have a password up to an odd
+# length (10 chars in the case of Shutterfly), we have a special "Exact
+# number of chars" rule
 LEN=3 # 16 character password
+
+# This makes it hard to brute force a master password should a 
+# generated password be compromised.  Higher single-digit numbers are
+# more secure, but password generation takes longer
+# For compatibility with older versions of pwgen, make cost "@"
+COST=3
 
 ##### SITE SPECIFIC RULES GO HERE #####
 case "$SITE" in
@@ -65,8 +75,9 @@ southwest.com)
 paypal.com)
 	INDEX=2 # Increase index by 1 every time we change a password
 	;;
-idiot.example.com)
-	LEN=2 # This makes the password shorter
+shutterfly.com)
+	EXACTCHARS=1 # LEN is the exact length of the password in characters
+	LEN=10 
 	;;
 esac
 ### END SITE SPECIFIC RULES ###
@@ -95,11 +106,14 @@ fi
 
 # If you need a really really large index, change this command line
 export P="$LEN:$SECRET:$SITE"
-# For compatibility with older versions of pwgen, make cost "@"
-COST=3
-PW=$( $MICRORG32 $COST $LEN | head -$INDEX | tail -1 | tr -d "$ZAP" | \
+if [ -z "$EXACTCHARS" ] ; then
+    PW=$( $MICRORG32 $COST $LEN | head -$INDEX | tail -1 | tr -d "$ZAP" | \
 	tr '_' "$CHANGE" )
-echo ${PW}_${SUFFIX}
+    echo ${PW}_${SUFFIX}
+else
+    $MICRORG32 $COST 9 | head -$INDEX | tail -1 | tr -d "$ZAP" | \
+	tr '_' "$CHANGE" | awk '{print substr($0,1,'$LEN')}' 
+fi
 
 rm -f ./microrg32-$$ ./microrg32-$$.c ./microrg32-$$.exe
 
