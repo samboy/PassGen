@@ -53,9 +53,6 @@ INDEX=1
 # can only handle 8 character passwords, make LEN 1.  For someone who needs
 # 24 chars in the password, make LEN 5.
 
-# For sites (hello, Shutterfly!) which can have a password up to an odd
-# length (10 chars in the case of Shutterfly), we have a special "Exact
-# number of chars" rule
 LEN=3 # 16 character password
 
 # This makes it hard to brute force a master password should a 
@@ -76,7 +73,11 @@ paypal.com)
 	INDEX=2 # Increase index by 1 every time we change a password
 	;;
 shutterfly.com)
-	EXACTCHARS=1 # LEN is the exact length of the password in characters
+	# For sites (hello, Shutterfly!) which can only have a password up 
+	# to an odd length (10 chars in the case of Shutterfly), we have 
+	# a special "Exact number of chars" rule.
+	# LEN can not be greater than 36 when EXACTCHARS is set
+	EXACTCHARS=1 # LEN now the exact length of password in characters
 	LEN=10 
 	;;
 esac
