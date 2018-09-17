@@ -77,7 +77,7 @@ let’s make an initial password for example.com:
 ```
 LEN=4
 SECRET="Some long passphrase with random text, like qhohxks5mx9el9v6ujg3t."
-export P="$LEN:Some secret:example.com"
+export P="$LEN:$SECRET:example.com"
 ./microrg32 3 $LEN | head -1
 ```
 
@@ -92,7 +92,7 @@ a new one:
 ```
 LEN=4
 SECRET="Some long passphrase with random text, like qhohxks5mx9el9v6ujg3t."
-export P="$LEN:Some secret:example.com"
+export P="$LEN:$SECRET:example.com"
 ./microrg32 3 $LEN | head -2 | tail -1
 ```
 
@@ -102,7 +102,7 @@ we can do this 90 days later to generate a new password:
 ```
 LEN=4
 SECRET="Some long passphrase with random text, like qhohxks5mx9el9v6ujg3t."
-export P="$LEN:Some secret:example.com"
+export P="$LEN:$SECRET:example.com"
 ./microrg32 3 $LEN | head -3 | tail -1
 ```
 
