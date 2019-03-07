@@ -25,6 +25,8 @@ export P="$LEN:Some secret:example.com"
 ./microrg32 1 $LEN | head -1
 ```
 
+Replace `Some secret` with a suitably hard to guess secret string.
+
 The first argument is how much effort we should expend to get this
 password; higher numbers mean more effort (this makes brute force
 attacks harder).  The second argument is how many bits of entropy the
