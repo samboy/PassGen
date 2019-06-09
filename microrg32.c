@@ -8,5 +8,5 @@ c,j=0;b(12)f[c+c%3*h]^=e[c+1];b(g){j+=c;i=c*7%g;k=e[i++];k^=e[i%g]|~e[(i+1
 n[c+4];*e^=1;b(3)e[c+h]^=f[c*h]=f[c*h+h];}int main(int p,char**v){q=getenv
 ("P");if(q&&p>2){for(;;m()){b(3){for(r=0;r<4;){f[c*h]^=k=(*q?*q&255:1)<<8*
 r++;e[16+c]^=k;if(!*q++){b(16+(1<<*v[1]%32))m();b(983){if(~t&1){m();}s=e[t
-^=3];r=c;b(4){q=v[p-1];z=z?z:*v[2]%16;i=s&31;i+=i<8?50:89;s>>=8;
-printf("%c",255&i);}c=r;if(!--z)puts("");}puts("");return 0;}}}}}}
+^=3];r=c;b(4){q=v[p-1];z=z?z:*v[2]%16;i=s&31;i+=i<8?50:89; s>>=8;printf(z?
+"%c":"%02x",255&i);z=z?z:1;}c=r;if(!--z)puts("");}puts("");return 0;}}}}}}
