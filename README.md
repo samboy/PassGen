@@ -88,7 +88,7 @@ of date explanation of how the code works is
 [available](https://github.com/samboy/rg32hash/blob/master/C/nanorg32.md).
 
 The above program also has a 
-[user guide](https://github.com/samboy/rg32hash/blob/master/C/microrg32.md).
+[user guide](https://github.com/samboy/passgen/blob/master/microrg32.md).
 
 ## Some other C programs
 
