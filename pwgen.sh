@@ -108,9 +108,8 @@ fi
 # If you need a really really large index, change this command line
 export P="$LEN:$SECRET:$SITE"
 if [ -z "$EXACTCHARS" ] ; then
-    PW=$( $MICRORG32 $COST $LEN | head -$INDEX | tail -1 | tr -d "$ZAP" | \
-	tr '_' "$CHANGE" )
-    echo ${PW}_${SUFFIX}
+    PW=$( $MICRORG32 $COST $LEN | head -$INDEX | tail -1 )
+    echo ${PW}_${SUFFIX} | tr '_' "$CHANGE" | tr -d "$ZAP"
 else
     $MICRORG32 $COST 9 | head -$INDEX | tail -1 | tr -d "$ZAP" | \
 	tr '_' "$CHANGE" | awk '{print substr($0,1,'$LEN')}' 
