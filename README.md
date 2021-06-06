@@ -61,6 +61,11 @@ The master password needs to be kept secret.  The master password
 should have enough entropy (i.e. be long enough) to be difficult 
 to guess.
 
+There are various ways for web sites to read the contents of one’s
+clipboard, such as `navigator.clipboard.read()`.  Be sure to not have 
+untrusted websites open (or have Javascript disabled on the websites) 
+while a sensitive password is in the clipboard.
+
 ### Cryptography used
 
 The underlying C program which provides the cryptography for passwords is
