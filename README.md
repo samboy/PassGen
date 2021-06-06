@@ -64,7 +64,8 @@ to guess.
 Be sure to keep the password in the clipboard for a minimal amount
 of time.  Browser extensions or other installed software may have
 access to the clipboard; note that [browsers don’t allow arbitrary
-websites unrestricted clipboard access](https://www.lucidchart.com/techblog/2014/12/02/definitive-guide-copying-pasting-javascript/).
+websites unrestricted clipboard access](https://www.lucidchart.com/techblog/2014/12/02/definitive-guide-copying-pasting-javascript/); see [this
+Mozilla article](http://kb.mozillazine.org/Granting_JavaScript_access_to_the_clipboard).
 
 ### Cryptography used
 
