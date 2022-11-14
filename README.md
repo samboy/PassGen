@@ -120,6 +120,18 @@ Release 1.0 of PassGen, done on August 22, 2018, broke compatibility
 with older versions of PassGen.  If older generated passwords are needed,
 please edit pwgen.sh to make `COST` be `@` instead of `3`.
 
+## Cyber Resilience Act statement
+
+PassGen is a project developed on a strictly volunteer, non-commercial
+basis.  It has been developed outside the course of a commercial
+activity, developed entirely in the Americas (i.e. *outside of Europe*)
+and therefore is not subject to the restrictions or conditions of the
+proposed EU Cyber Resilience Act.  Someone selling a product that
+uses any component of PassGen may be subject to this act and may
+need to handle any and all necessary compliance.
+
+PassGen is provided free of charge but with **no warranty**.
+
 ## External links
 
 https://github.com/dropbox/zxcvbn is a useful tool for seeing how secure 
