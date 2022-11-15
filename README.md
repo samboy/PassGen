@@ -6,7 +6,9 @@ pwgen.sh allows the one to generate secure passwords for websites.
 To use, do something like this:
 
 ```
-echo 'Some secret string hlrehcv5kn4' > ~/.master_password # Only do this once
+cd
+echo 'Some secret string hlrehcv5kn4' > .master_password # Only do this once
+chmod 600 .master_password # Make master password secret. 
 pwgen.sh facebook.com
 ```
 
@@ -59,13 +61,16 @@ examples of how to deal with site-specific rules.
 
 The master password needs to be kept secret.  The master password 
 should have enough entropy (i.e. be long enough) to be difficult 
-to guess.
+to guess.  The master password should be on an encrypted filesystem
+and have `600` permissions.
 
 Be sure to keep the password in the clipboard for a minimal amount
 of time.  Browser extensions or other installed software may have
 access to the clipboard; note that [browsers don’t allow arbitrary
 websites unrestricted clipboard access](https://www.lucidchart.com/techblog/2014/12/02/definitive-guide-copying-pasting-javascript/); see [this
 Mozilla article](http://kb.mozillazine.org/Granting_JavaScript_access_to_the_clipboard).
+
+The microrg32 code assumes that one’s environmental variables are secret.  
 
 ### Cryptography used
 
